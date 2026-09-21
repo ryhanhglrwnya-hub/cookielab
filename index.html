@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Lab</title>
-<style>
+  <style>
   @import url('https://v1.fontapi.ir/css/Vazirmatn');
 
   body {
@@ -12,32 +12,31 @@
     font-family: 'Vazirmatn', sans-serif;
     color: #3e2723;
     margin: 0;
-    padding: 20px;
-    direction: rtl; /* اطمینان از راست‌چین بودن کل صفحه */
+    padding: 10px; /* کاهش فاصله کلی صفحه */
+    direction: rtl;
   }
 
   .box {
     background: #ffffff;
-    padding: 30px;
-    border-radius: 25px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.07);
-    max-width: 500px;
-    margin: 20px auto;
-    border: 2px solid #e8dcc4;
+    padding: 20px; /* کاهش فضای داخلی */
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 450px; /* کمی کوچک‌تر */
+    margin: 10px auto; /* کاهش فاصله باکس از بالا */
+    border: 3px solid #3e2723; /* حاشیه قهوه‌ای تیره */
   }
 
-  /* لوگوی بزرگتر و بدون متن اضافی */
+  /* لوگوی بزرگتر */
   .logo {
-    width: 160px;          /* سایز بزرگتر شده */
-    height: 160px;         /* سایز بزرگتر شده */
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #a67b5b;
-    margin: 0 auto 30px;   /* فاصله بیشتر از پایین برای زیبایی */
+    border: 6px solid #3e2723; /* حاشیه قهوه‌ای تیره */
+    margin: 0 auto 15px; /* فاصله کمتر */
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     background-color: #fff;
   }
 
@@ -47,74 +46,53 @@
     object-fit: cover;
   }
 
-  /* اصلاح چیدمان فرم‌ها و متن‌ها */
-  label, p, span, div {
-    text-align: right;      /* اطمینان از اینکه همه متن‌ها راست‌چین هستند */
-    display: block;
-    width: 100%;
-  }
-
-  /* اصلاح دقیق‌تر فیلدهای ورودی و برچسب‌ها */
+  /* تنظیمات جمع‌وجور فرم */
+  label { font-weight: bold; color: #3e2723; display: block; margin-bottom: 2px; font-size: 14px; }
+  
   input, select, textarea {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0 20px 0; /* فاصله استاندارد بین فیلدها */
-    border: 1px solid #d7ccc8;
-    border-radius: 12px;
+    padding: 10px;
+    margin: 5px 0 10px 0; /* فاصله بسیار کمتر */
+    border: 1px solid #3e2723;
+    border-radius: 8px;
     box-sizing: border-box;
     font-family: 'Vazirmatn', sans-serif;
-    text-align: right;     /* متن داخل فیلدها راست‌چین باشد */
     font-size: 14px;
   }
 
-  /* استایل بخش‌های اختصاصی مثل وزن و سایز */
-  .itemFields label, .icingForm label, .bcForm label, .cOpts label, .bOpts label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #5d4037;
-    display: block;
-  }
-
   button {
-    background-color: #6f4e37;
+    background-color: #3e2723; /* قهوه‌ای تیره */
     color: white;
     border: none;
-    padding: 15px;
-    border-radius: 12px;
+    padding: 12px;
+    border-radius: 8px;
     cursor: pointer;
     width: 100%;
     font-weight: bold;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-  }
-
-  button:hover {
-    background-color: #4e342e;
-    transform: translateY(-2px); /* افکت شناور شدن موقع هاور */
+    margin-top: 5px;
   }
 
   .order-item {
-    background: #fff8e1;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 12px;
+    background: #fdf6e3;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-right: 5px solid #a67b5b;
+    border-right: 4px solid #3e2723;
   }
 
   .del-btn {
-    background: #e57373;
+    background: #b71c1c;
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 4px 8px;
+    border-radius: 5px;
     cursor: pointer;
   }
 </style>
-   
+ 
 </head>
 <body> 
 
