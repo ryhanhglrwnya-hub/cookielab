@@ -4,99 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Lab</title>
-    <style>
-  /* وارد کردن فونت وزیرمتن برای ظاهر مدرن */
+<style>
   @import url('https://v1.fontapi.ir/css/Vazirmatn');
 
   body {
-    background-color: #fdf6e3; /* پس‌زمینه کرم ملایم */
+    background-color: #fdf6e3;
     font-family: 'Vazirmatn', sans-serif;
-    color: #3e2723; /* قهوه‌ای تیره برای متن */
+    color: #3e2723;
     margin: 0;
     padding: 20px;
-    direction: rtl;
+    direction: rtl; /* اطمینان از راست‌چین بودن کل صفحه */
   }
 
   .box {
     background: #ffffff;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.07);
     max-width: 500px;
     margin: 20px auto;
     border: 2px solid #e8dcc4;
   }
 
-  /* استایل دایره‌ای برای لوگو */
+  /* لوگوی بزرگتر و بدون متن اضافی */
   .logo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* تبدیل به دایره */
-    overflow: hidden; /* هر چیزی بیرون دایره باشه حذف میشه */
-    border: 4px solid #a67b5b; /* حاشیه قهوه‌ای برند */
-    margin: 0 auto 20px; /* وسط‌چین کردن */
+    width: 160px;          /* سایز بزرگتر شده */
+    height: 160px;         /* سایز بزرگتر شده */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #a67b5b;
+    margin: 0 auto 30px;   /* فاصله بیشتر از پایین برای زیبایی */
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
-  /* این بخش تضمین می‌کنه عکس داخل دایره درست فیت بشه */
   .logo img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* پر کردن دایره بدون کشیدگی */
+    object-fit: cover;
   }
 
-  select, input, textarea {
+  /* اصلاح چیدمان فرم‌ها و متن‌ها */
+  label, p, span, div {
+    text-align: right;      /* اطمینان از اینکه همه متن‌ها راست‌چین هستند */
+    display: block;
+    width: 100%;
+  }
+
+  /* اصلاح دقیق‌تر فیلدهای ورودی و برچسب‌ها */
+  input, select, textarea {
     width: 100%;
     padding: 12px;
-    margin: 8px 0;
+    margin: 10px 0 20px 0; /* فاصله استاندارد بین فیلدها */
     border: 1px solid #d7ccc8;
-    border-radius: 10px;
+    border-radius: 12px;
     box-sizing: border-box;
     font-family: 'Vazirmatn', sans-serif;
+    text-align: right;     /* متن داخل فیلدها راست‌چین باشد */
+    font-size: 14px;
+  }
+
+  /* استایل بخش‌های اختصاصی مثل وزن و سایز */
+  .itemFields label, .icingForm label, .bcForm label, .cOpts label, .bOpts label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #5d4037;
+    display: block;
   }
 
   button {
     background-color: #6f4e37;
     color: white;
     border: none;
-    padding: 12px;
-    border-radius: 10px;
+    padding: 15px;
+    border-radius: 12px;
     cursor: pointer;
     width: 100%;
     font-weight: bold;
-    transition: background 0.3s;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
   }
 
   button:hover {
     background-color: #4e342e;
+    transform: translateY(-2px); /* افکت شناور شدن موقع هاور */
   }
 
   .order-item {
     background: #fff8e1;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 8px;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-right: 4px solid #a67b5b;
+    border-right: 5px solid #a67b5b;
   }
 
   .del-btn {
     background: #e57373;
     color: white;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 8px 12px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 12px;
   }
 </style>
-
+   
 </head>
 <body> 
 
