@@ -12,13 +12,13 @@
         font-family: 'Vazirmatn', sans-serif; 
         background-color: var(--bg); 
         color: var(--p); 
-        padding: 25px; /* کمی فضای بیشتر اطراف */
-        max-width: 450px; /* کمی عریض‌تر */
+        padding: 25px; 
+        max-width: 450px; 
         margin: auto; 
         display: block !important; 
     }
 
-    /* لوگو: بدون تغییر */
+    /* لوگو: بزرگ و دایره‌ای با حاشیه تیره */
     .logo { 
         width: 200px !important; 
         height: 200px !important; 
@@ -32,11 +32,11 @@
     /* مخفی کردن متن برند کنار لوگو */
     h1 { display: none !important; }
 
-    /* باکس‌ها: فضای داخلی بیشتر (۲۵ پیکسل به جای ۲۰) */
+    /* باکس‌ها: فضای داخلی و اندازه بزرگ‌تر */
     .box { 
         background: #FFFFFF; 
         padding: 25px; 
-        border-radius: 18px; /* گردتر */
+        border-radius: 18px; 
         box-shadow: 0 6px 20px rgba(0,0,0,0.06); 
         margin-bottom: 20px; 
         display: block !important; 
@@ -47,21 +47,21 @@
     /* فونت بزرگ‌تر برای برچسب‌ها */
     label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 16px; }
     
-    /* ورودی‌ها: بزرگ‌تر و راحت‌تر */
+    /* ورودی‌ها: بزرگ‌تر و خواناتر */
     select, input, textarea { 
         width: 100%; 
-        padding: 15px; /* ورودی‌های درشت‌تر */
+        padding: 15px; 
         border-radius: 10px; 
         border: 1.5px solid #D7CCC8; 
         box-sizing: border-box; 
         font-family: inherit;
         background: #FAFAFA;
         margin-bottom: 20px;
-        font-size: 16px; /* فونت بزرگ‌تر */
+        font-size: 16px; 
         display: block; 
     }
 
-    /* دکمه: بزرگ و خوش‌دست */
+    /* دکمه اصلی: بزرگ و خوش‌دست */
     button { 
         background-color: var(--p); 
         color: #FFFFFF; 
@@ -70,13 +70,26 @@
         width: 100%; 
         border-radius: 10px; 
         font-weight: 700; 
-        font-size: 16px; /* فونت بزرگ‌تر */
+        font-size: 16px; 
         cursor: pointer; 
         display: block;
     }
 
     #orderList { background: #efebe9; padding: 15px; border-radius: 10px; margin-top: 10px; font-size: 15px; }
-    .order-item { display: flex; justify-content: space-between; border-bottom: 1px solid #d7ccc8; padding: 10px 0; }
+    .order-item { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #d7ccc8; padding: 10px 0; }
+
+    /* دکمه حذف: کوچک و جمع‌وجور */
+    .del-btn { 
+        padding: 4px 10px !important; 
+        font-size: 12px !important; 
+        border-radius: 6px !important; 
+        background-color: #e53935 !important; 
+        color: #ffffff !important; 
+        border: none !important; 
+        cursor: pointer !important; 
+        width: auto !important; 
+        margin: 0 !important;
+    }
 </style>
 
 </head>
