@@ -12,22 +12,22 @@
     font-family: 'Vazirmatn', sans-serif;
     color: #4E342E;
     margin: 0;
-    padding: 15px;
+    padding: 10px; /* خیلی کم و فشرده */
     display: flex;
     justify-content: center;
   }
 
   .box {
     background: #FFFFFF;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(121, 85, 72, 0.08);
+    padding: 15px; /* فشرده */
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     max-width: 400px;
     width: 100%;
-    /* چیدمان ستونیِ اجباری */
+    /* ساختار ستونی ساده */
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    gap: 5px; /* فاصله بسیار کم بین آیتم‌ها */
   }
 
   /* حذف کامل متن مزاحم */
@@ -36,17 +36,16 @@
   }
 
   .logo {
-    width: 200px; /* سایز بزرگ‌تر */
+    width: 200px;
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    /* حاشیه نازک و قهوه‌ای نسکافه‌ای ملایم */
-    border: 2px solid #8D6E63; 
-    margin: 0 auto 15px auto;
+    /* قهوه‌ای تیره و نازک */
+    border: 2px solid #4E342E;
+    margin: 0 auto 10px auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0;
   }
 
   .logo img {
@@ -55,49 +54,48 @@
     object-fit: cover;
   }
 
-  /* تمامی فیلدها و لیبل‌ها به صورت بلوک و ستونی */
+  /* استایل اجباری برای عمودی شدن تمام فیلدها */
   label, input, select, textarea, button, .order-item {
-    width: 100%;
     display: block !important;
+    width: 100% !important;
     box-sizing: border-box;
+    margin-bottom: 3px !important; /* حذف فواصل اضافه */
   }
 
   label {
     font-weight: 700;
-    font-size: 13px;
-    color: #6D4C41;
+    font-size: 12px;
+    color: #4E342E;
     margin-top: 5px;
   }
 
   input, select, textarea {
-    padding: 12px;
+    padding: 8px; /* فشرده */
     border: 1px solid #D7CCC8;
-    border-radius: 10px;
+    border-radius: 8px;
     background: #FAFAFA;
     font-family: 'Vazirmatn', sans-serif;
   }
 
   button {
-    background-color: #5D4037;
+    background-color: #4E342E;
     color: white;
     border: none;
-    padding: 14px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 8px;
     font-weight: 600;
-    margin-top: 10px;
+    margin-top: 5px;
     cursor: pointer;
   }
 
-  /* تغییر ساختار آیتم‌های لیست به ستونی */
+  /* تغییر ساختار آیتم‌ها: کاملاً عمودی و ساده */
   .order-item {
     background: #FDF9F3;
-    padding: 12px;
-    border-radius: 10px;
+    padding: 8px;
+    border-radius: 8px;
     border: 1px solid #EFEBE9;
-    /* این بخش قبلاً باعث افقی شدن می‌شد، الان ستونی کردیم */
-    display: flex !important;
-    flex-direction: column !important; 
-    gap: 8px;
+    /* حذف هرگونه خاصیت افقی */
+    display: block !important; 
     text-align: right;
   }
 
@@ -105,10 +103,11 @@
     background: #FFEBEE;
     color: #D32F2F;
     border: none;
-    padding: 8px;
-    border-radius: 8px;
-    font-size: 12px;
-    width: 100%; /* دکمه حذف هم تمام عرض شود */
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 11px;
+    margin-top: 5px; /* زیر بقیه چیزها بیفتد */
+    display: block !important;
   }
 </style>
 
