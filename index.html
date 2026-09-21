@@ -5,40 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Lab</title>
 <style>
-  /* اصلاح قطعی لوگو */
+  @import url('https://v1.fontapi.ir/css/Vazirmatn');
+
+  /* پالت رنگی گرم و بیسکوییتی - بدون تغییر */
+  body {
+    background-color: #FDF9F3; 
+    font-family: 'Vazirmatn', sans-serif;
+    color: #4E342E;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .box {
+    background: #FFFFFF; /* کانتینر سفید */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* لوگو: دایره‌ای با حاشیه قهوه‌ای تیره */
   .logo {
     width: 200px !important;
     height: 200px !important;
     border-radius: 50% !important;
-    overflow: hidden !important;
     border: 2px solid #4E342E !important;
-    margin: 0 auto 20px auto !important;
-    display: block !important;
-    aspect-ratio: 1 / 1 !important;
-    flex-shrink: 0 !important;
+    margin: 0 auto !important;
+    overflow: hidden;
+    display: block;
+    flex-shrink: 0;
   }
+
   .logo img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
-  /* اصلاح قطعی چیدمان عمودی */
-  /* تمام عناصر داخل باکس را مجبور به ایستادن زیر هم می‌کنیم */
-  .box > * {
-    display: block !important;
-    width: 100% !important;
-    float: none !important;
-    clear: both !important;
-    margin-bottom: 10px !important;
+  /* فرم: تمام آیتم‌ها بلوکی و عمودی */
+  label {
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 2px;
   }
 
-  /* باکس اصلی */
-  .box {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
+  input, select, textarea, button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #D7CCC8; /* رنگ حاشیه ورودی ها */
+    border-radius: 8px;
+    background: #FAFAFA; /* پس زمینه روشن فیلدها */
+    font-family: inherit;
+  }
+
+  button {
+    background-color: #4E342E; /* دکمه قهوه‌ای تیره */
+    color: #FFFFFF;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    margin-top: 5px;
+  }
+
+  .order-item {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #FDF9F3; /* پس زمینه آیتم لیست */
+    border: 1px solid #EFEBE9;
+    border-radius: 8px;
+    margin-bottom: 5px;
+  }
+
+  .logo + *, .logo + h1 {
+    display: none !important;
   }
 </style>
 
