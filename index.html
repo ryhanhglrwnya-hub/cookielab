@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Lab</title>
+    <style>
+        :root { --p: #5d4037; --bg: #fdfaf7;  }
+body { 
+            font-family: 'Segoe UI', Tahoma, sans-serif; 
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            color: #4a3728; 
+            max-width: 450px; 
+            margin: auto; 
+            padding: 20px;
+            min-height: 100vh;
+        } 
+
+        /* لوگو با استایل خاص */
+        .logo { 
+            width: 140px; 
+            height: 140px; 
+            border-radius: 50%; 
+            display: block; 
+            margin: 20px auto; 
+            border: 6px solid #ffffff; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        .logo:hover { transform: scale(1.05); } 
+
+        h1 { text-align: center; color: #5d4037; font-weight: 800; letter-spacing: 1px; } 
+
+        /* افکت Glassmorphism برای باکس‌ها */
+        .box { 
+            background: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(10px);
+            padding: 25px; 
+            border-radius: 25px; 
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08); 
+            margin-bottom: 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        } 
+
+        label { display: block; margin-bottom: 10px; font-weight: 600; color: #6d4c41; } 
+
+        select, textarea, input { 
+            width: 100%; 
+            padding: 14px; 
+            border: none; 
+            border-radius: 15px; 
+            background: #fff;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 15px; 
+            font-size: 1rem;
+            transition: 0.3s;
+        } 
+
+        button { 
+            background: linear-gradient(45deg, #8d6e63, #a1887f); 
+            color: white; 
+            border: none; 
+            padding: 15px; 
+            width: 100%; 
+            border-radius: 15px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            box-shadow: 0 4px 15px rgba(141, 110, 99, 0.3);
+            transition: 0.3s;
+        } 
+
+        button:hover { 
+            background: linear-gradient(45deg, #5d4037, #6d4c41);
+            transform: translateY(-3px);
+        } 
+
+        .order-item { 
+            background: rgba(255, 255, 255, 0.9); 
+            padding: 15px; 
+            border-radius: 12px; 
+            margin-bottom: 10px; 
+            border-right: 6px solid #d7ccc8; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        } 
+
+        .del-btn { 
+            background: #ffab91; 
+            color: white; 
+            border: none; 
+            padding: 8px 15px; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 0.8rem;
+            width: auto;
+        }
+    </style>
+</head>
+<body> 
+
+<img src="IMG_20260912_135037.jpg" class="logo" alt="Logo">
+<h1>Cookie Lab</h1>
+<div class="box">
+    <label>نوع محصول</label>
+    <select id="modal" onchange="showFields()">
+        <option value="">--- انتخاب کنید ---</option>
+        <option value="icing">آیسینگ</option>
+        <option value="biscuit">بیسکوییت</option>
+        <option value="cookie">کوکی</option>
+    </select>
+</div> 
+
+<div id="itemFields" class="box" style="display:none">
+    <div id="icingForm" style="display:none">
+        <label>طعم</label>
+        <select id="icingFlavor">
+            <option>وانیلی</option><option>کاکائو</option><option>مرمری (وانیلی + کاکائو)</option>
+        </select>
+        <label>تعداد</label>
+        <input type="number" id="icingQuantity" placeholder="تعداد">
+        <label>طرح</label>
+        <textarea id="icingDesign" placeholder="توضیح طرح"></textarea>
+    </div> 
+
+    <div id="bcForm" style="display:none">
+        <label>طعم</label>
+        <select id="bFlavor">
+            <option>وانیل</option><option>کاکائو</option><option>دو رنگ</option><option>قهوه</option><option>دارچین</option>
+            <option>هل و زعفرون</option><option>گلاب و زعفرون</option><option>هل و چای</option><option>زنجبیل</option>
+            <option>انبه</option><option>پسته</option><option>بادام درختی</option><option>بادام زمینی</option>
+            <option>گردو</option><option>چهار مغز</option><option>مربایی</option><option>ماسالا</option><option>لیمویی</option>
+            <option>پرتغالی</option><option>نارگیل</option><option>هویج و دارچین</option><option>سیب و دارچین</option>
+            <option>کدو حلوایی</option><option>موز و کره بادام زمینی</option><option>خرما و گردو</option>
+            <option>خرما و کنجد</option><option>سوهان</option><option>کشمشی ساده</option><option>کشمشی با گردو</option>
+            <option>بیسکوییتی</option><option>تیرامیسو</option>
+        </select>
+        <select id="cFlavor" style="display:none">
+            <option>وانیل</option><option>کاکائو</option><option>دو رنگ</option><option>قهوه</option><option>دارچین</option>
+            <option>هل و زعفرون</option><option>گلاب و زعفرون</option><option>هل و چای</option><option>زنجبیل</option>
+            <option>انبه</option><option>پسته</option><option>بادام درختی</option><option>بادام زمینی</option>
+            <option>گردو</option><option>چهار مغز</option><option>مربایی</option><option>ماسالا</option><option>لیمویی</option>
+            <option>پرتغالی</option><option>نارگیل</option><option>هویج و دارچین</option><option>سیب و دارچین</option>
+            <option>کدو حلوایی</option><option>موز و کره بادام زمینی</option><option>خرما و گردو</option>
+            <option>خرما و کنجد</option><option>سوهان</option><option>کشمشی ساده</option><option>کشمشی با گردو</option>
+            <option>بیسکوییتی</option><option>تیرامیسو</option><option>شکلات تلخ</option><option>شکلات شیری</option><option>شکلات سفید</option><option>کرینکل</option>
+        </select>
+        
+        <label>وزن</label>
+        <select id="weight">
+            <option>نیم کیلو</option><option>یک کیلو (5% تخفیف)</option><option>یک و نیم کیلو (10% تخفیف)</option><option>دو کیلو (20% تخفیف)</option>
+        </select>
+        
+        <div id="bOpts" style="display:none">
+            <label>شکل</label>
+            <select id="shape">
+                <option>ماه</option><option>ستاره</option><option>قلب</option><option>گل</option><option>مدادی</option>
+                <option>سفارشی (طرح مد نظر را در بخش توضیحات شرح دهید)</option>
+            </select>
+            <label>قالب</label>
+            <select id="mold"><option>بزرگ</option><option>کوچک</option></select>
+        </div>
+        <div id="cOpts" style="display:none">
+            <label>سایز</label>
+            <select id="size"><option>کوچک</option><option>متوسط</option><option>بزرگ</option></select>
+        </div>
+    </div>
+    <button onclick="addToOrder()">افزودن به لیست</button>
+</div> 
+
+<div id="sumBox" class="box" style="display:none">
+    <strong>لیست سفارش:</strong>
+    <div id="orderList"></div>
+</div> 
+
+<div class="box">
+    <input type="text" id="name" placeholder="نام و نام خانوادگی">
+    <input type="tel" id="phone" placeholder="شماره تماس">
+    <textarea id="addr" placeholder="آدرس دقیق"></textarea>
+    <textarea id="note" placeholder="سایر توضیحات"></textarea>
+    <button onclick="sendOrder()">ارسال نهایی</button>
+</div> 
+
+<script>
+    let order = [];
+    
+    function showFields() {
+        const m = document.getElementById('modal').value;
+        document.getElementById('itemFields').style.display = m ? 'block' : 'none';
+        document.getElementById('icingForm').style.display = m === 'icing' ? 'block' : 'none';
+        document.getElementById('bcForm').style.display = m !== 'icing' ? 'block' : 'none';
+        document.getElementById('bFlavor').style.display = m === 'biscuit' ? 'block' : 'none';
+        document.getElementById('cFlavor').style.display = m === 'cookie' ? 'block' : 'none';
+        document.getElementById('bOpts').style.display = m === 'biscuit' ? 'block' : 'none';
+        document.getElementById('cOpts').style.display = m === 'cookie' ? 'block' : 'none';
+    } 
+
+    function addToOrder() {
+        const m = document.getElementById('modal').value;
+        if (!m) return;
+        let d = m + ": ";
+        if (m === 'icing') {
+            d += `${document.getElementById('icingFlavor').value} | ${document.getElementById('icingQuantity').value} عدد | ${document.getElementById('icingDesign').value}`;
+        } else {
+            const f = m === 'biscuit' ? document.getElementById('bFlavor').value : document.getElementById('cFlavor').value;
+            d += `${f} | ${document.getElementById('weight').value}`;
+            if (m === 'biscuit') d += ` | ${document.getElementById('shape').value} | ${document.getElementById('mold').value}`;
+            else d += ` | ${document.getElementById('size').value}`;
+        }
+        order.push(d);
+        renderOrder();
+    } 
+
+    function removeItem(index) {
+        order.splice(index, 1);
+        renderOrder();
+    } 
+
+    function renderOrder() {
+        const listDiv = document.getElementById('orderList');
+        listDiv.innerHTML = '';
+        if (order.length === 0) {
+            document.getElementById('sumBox').style.display = 'none';
+        } else {
+            document.getElementById('sumBox').style.display = 'block';
+            order.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'order-item';
+                div.innerHTML = `<span>${index + 1}. ${item}</span> <button class="del-btn" onclick="removeItem(${index})">×</button>`;
+                listDiv.appendChild(div);
+            });
+        }
+    } 
+
+    function sendOrder() {
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const addr = document.getElementById('addr').value; 
+
+        if (order.length === 0) {
+            alert("سبد خرید شما خالی است! لطفاً ابتدا محصولی را اضافه کنید.");
+            return;
+        }
+        if (!name || !phone || !addr) {
+            alert("لطفاً نام، شماره تماس و آدرس خود را وارد کنید.");
+            return;
+        } 
+
+        let msg = `🍪 *سفارش جدید Cookie Lab*%0A%0A`;
+        msg += `👤 *مشخصات مشتری:*%0A`;
+        msg += `نام: ${name}%0A`;
+        msg += `📞 تلفن: ${phone}%0A`;
+        msg += `📍 آدرس: ${addr}%0A`;
+        msg += `📝 توضیحات: ${document.getElementById('note').value}%0A%0A`;
+        msg += `🛍 *لیست سفارشات:*%0A`;
+        order.forEach((item, index) => { msg += `${index + 1}. ${item}%0A`; });
+        window.open(`https://ble.ir/aura89?text=${msg}`, '_blank');
+    }
+</script>
+</body>
+</html>
