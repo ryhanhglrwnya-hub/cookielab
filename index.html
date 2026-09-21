@@ -5,26 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Lab</title>
     <style>
-             :root { --p: #5d4037; --bg: #fdfaf7; }
-        body { 
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            background: var(--bg); 
-            color: var(--p); 
-            padding: 15px; 
-            max-width: 450px; 
-            margin: auto; 
-            line-height: 1.6;
-        }
-        .logo { width: 130px; height: 130px; border-radius: 50%; margin: 0 auto 15px; display: block; border: 3px solid var(--p); object-fit: cover; }
-        h1 { text-align: center; font-size: 1.5em; margin-bottom: 20px; }
-        .box { background: #ffffff; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(93, 64, 55, 0.1); margin-bottom: 15px; border: 1px solid #efebe9; }
-        label { display: block; margin: 10px 0 5px; font-weight: bold; font-size: 0.9em; }
-        select, input, textarea { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #d7ccc8; box-sizing: border-box; font-size: 1em; background: #fff; }
-        button { background: #4ca159; color: #fff; border: none; padding: 12px; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 15px; font-size: 1em; }
-        #orderList { font-size: 0.9em; background: #efebe9; padding: 10px; border-radius: 8px; margin-top: 10px; }
-        .order-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; padding-bottom: 5px; border-bottom: 1px solid #d7ccc8; }
-        .del-btn { background: #e53935; padding: 5px 10px; font-size: 12px; border-radius: 4px; color: white; border: none; cursor: pointer; }
-    </style>
+  /* وارد کردن فونت وزیرمتن برای ظاهر مدرن */
+  @import url('https://v1.fontapi.ir/css/Vazirmatn');
+
+  body {
+    background-color: #fdf6e3; /* پس‌زمینه کرم ملایم */
+    font-family: 'Vazirmatn', sans-serif;
+    color: #3e2723; /* قهوه‌ای تیره برای متن */
+    margin: 0;
+    padding: 20px;
+    direction: rtl;
+  }
+
+  .box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    max-width: 500px;
+    margin: 20px auto;
+    border: 2px solid #e8dcc4;
+  }
+
+  /* استایل دایره‌ای برای لوگو */
+  .logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* تبدیل به دایره */
+    overflow: hidden; /* هر چیزی بیرون دایره باشه حذف میشه */
+    border: 4px solid #a67b5b; /* حاشیه قهوه‌ای برند */
+    margin: 0 auto 20px; /* وسط‌چین کردن */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /* این بخش تضمین می‌کنه عکس داخل دایره درست فیت بشه */
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* پر کردن دایره بدون کشیدگی */
+  }
+
+  select, input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #d7ccc8;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif;
+  }
+
+  button {
+    background-color: #6f4e37;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  button:hover {
+    background-color: #4e342e;
+  }
+
+  .order-item {
+    background: #fff8e1;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 4px solid #a67b5b;
+  }
+
+  .del-btn {
+    background: #e57373;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+</style>
+
 </head>
 <body> 
 
