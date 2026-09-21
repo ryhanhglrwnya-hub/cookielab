@@ -8,39 +8,49 @@
   @import url('https://v1.fontapi.ir/css/Vazirmatn');
 
   body {
-    background-color: #FFFBF6; /* یک کرم خیلی ملایم و گرم */
+    background-color: #FFFBF6;
     font-family: 'Vazirmatn', sans-serif;
-    color: #5D4037; /* قهوه‌ای روشن و گرم، نه تیره */
+    color: #5D4037;
     margin: 0;
     padding: 20px;
     direction: rtl;
-    display: flex;
-    justify-content: center;
+    /* اطمینان از اینکه همه چیز در ستون قرار می‌گیرد */
+    display: block; 
   }
 
   .box {
     background: #ffffff;
-    padding: 30px;
-    border-radius: 30px; /* لبه‌های خیلی گرد برای حس گوگولی */
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05); /* سایه نرم و محو */
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
     max-width: 450px;
-    width: 100%;
-    border: 1px solid #efe5de; /* حاشیه خیلی محو و شیک */
+    margin: 0 auto; /* وسط‌چین کردن باکس در صفحه */
+    border: 1px solid #efe5de;
+    /* جلوگیری از تغییر حالت به افقی */
+    display: flex;
+    flex-direction: column; 
   }
 
-  /* لوگوی خفن و بزرگ */
+  /* حذف اجباری متن Cookie Lab */
+  /* این بخش هر متنی که احتمالا در تگ های h1 یا div زیر لوگو باشد را مخفی می‌کند */
+  .logo + *, 
+  .logo + h1, 
+  .logo + div, 
+  .logo + span {
+    display: none !important;
+  }
+
   .logo {
     width: 180px;
     height: 180px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #fff;
-    box-shadow: 0 8px 20px rgba(166, 123, 91, 0.2); /* سایه رنگی ملایم */
-    margin: 0 auto 25px;
+    border: 5px solid #A67B5B;
+    margin: 0 auto 20px auto; /* مرکز کردن لوگو */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0; /* ترفند مخفی کردن متن Cookie Lab بدون حذف در HTML */
+    position: relative;
   }
 
   .logo img {
@@ -49,63 +59,63 @@
     object-fit: cover;
   }
 
-  /* فیلدها */
-  label { font-weight: 600; color: #795548; font-size: 13px; margin-bottom: 8px; display: block; }
-  
-  input, select, textarea {
+  /* اصلاح چیدمان فرم به صورت عمودی */
+  input, select, textarea, .order-item, button {
+    display: block;
     width: 100%;
-    padding: 14px;
-    margin-bottom: 15px;
-    border: 1.5px solid #EFE5DE;
-    border-radius: 15px;
-    background: #FFFBF6;
     box-sizing: border-box;
-    font-family: 'Vazirmatn', sans-serif;
-    font-size: 15px;
-    outline: none;
-    transition: 0.3s;
   }
 
-  input:focus { border-color: #A67B5B; }
+  label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  input, select, textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1.5px solid #EFE5DE;
+    border-radius: 12px;
+    background: #FFFBF6;
+    font-family: 'Vazirmatn', sans-serif;
+  }
 
   button {
-    background-color: #A67B5B; /* رنگ بیسکوییتی */
+    background-color: #A67B5B;
     color: white;
     border: none;
-    padding: 16px;
+    padding: 15px;
     border-radius: 15px;
-    cursor: pointer;
-    width: 100%;
     font-weight: bold;
-    font-size: 16px;
-    transition: 0.3s;
+    margin-top: 15px;
+    cursor: pointer;
   }
 
-  button:hover { background-color: #8D674A; }
-
-  /* مرتب‌سازی آیتم‌ها */
   .order-item {
     background: #FFFBF6;
-    padding: 12px;
-    border-radius: 15px;
-    margin-bottom: 10px;
-    display: flex;
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    border: 1px solid #efe5de;
+    display: flex; /* برای اینکه دکمه حذف کنار آیتم باشد */
+    flex-direction: row-reverse; /* تراز کردن آیتم و دکمه */
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #efe5de;
   }
 
   .del-btn {
     background: #ffcdd2;
     color: #c62828;
     border: none;
-    padding: 6px 12px;
-    border-radius: 10px;
-    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 8px;
     font-size: 12px;
   }
 </style>
- 
+
 </head>
 <body> 
 
