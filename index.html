@@ -7,7 +7,7 @@
 <style>
   @import url('https://v1.fontapi.ir/css/Vazirmatn');
 
-  /* پالت رنگی گرم و بیسکوییتی - بدون تغییر */
+  /* پالت رنگی و استایل اصلی همان فرمت قبلی */
   body {
     background-color: #FDF9F3; 
     font-family: 'Vazirmatn', sans-serif;
@@ -19,7 +19,7 @@
   }
 
   .box {
-    background: #FFFFFF; /* کانتینر سفید */
+    background: #FFFFFF;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -30,7 +30,7 @@
     gap: 15px;
   }
 
-  /* لوگو: دایره‌ای با حاشیه قهوه‌ای تیره */
+  /* لوگو: بالا، دایره‌ای، بدون تغییر نسبت به حالت قبل */
   .logo {
     width: 200px !important;
     height: 200px !important;
@@ -40,6 +40,7 @@
     overflow: hidden;
     display: block;
     flex-shrink: 0;
+    order: 1;
   }
 
   .logo img {
@@ -49,7 +50,11 @@
     display: block;
   }
 
-  /* فرم: تمام آیتم‌ها بلوکی و عمودی */
+  /* تنظیم ترتیب دقیق باکس‌ها به صورت عمودی */
+  .logo + * { order: 2; }
+  .logo + * + * { order: 3; }
+
+  /* استایل فیلدها و برچسب‌ها دقیقاً مشابه نسخه سالم قبلی */
   label {
     display: block;
     width: 100%;
@@ -63,14 +68,14 @@
     width: 100%;
     box-sizing: border-box;
     padding: 12px;
-    border: 1px solid #D7CCC8; /* رنگ حاشیه ورودی ها */
+    border: 1px solid #D7CCC8;
     border-radius: 8px;
-    background: #FAFAFA; /* پس زمینه روشن فیلدها */
+    background: #FAFAFA;
     font-family: inherit;
   }
 
   button {
-    background-color: #4E342E; /* دکمه قهوه‌ای تیره */
+    background-color: #4E342E;
     color: #FFFFFF;
     font-weight: 700;
     cursor: pointer;
@@ -82,7 +87,7 @@
     display: block;
     width: 100%;
     padding: 10px;
-    background: #FDF9F3; /* پس زمینه آیتم لیست */
+    background: #FDF9F3;
     border: 1px solid #EFEBE9;
     border-radius: 8px;
     margin-bottom: 5px;
