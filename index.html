@@ -5,77 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Lab</title>
 <style>
-    /* این همان پالت رنگی اصلی شماست */
-    :root { --p: #5d4037; --bg: #fdfaf7; }
+    /* پالت رنگی بیسکوییتی و شیک */
+    :root { --p: #4E342E; --bg: #FDF9F3; }
     
     body { 
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-        background: var(--bg); 
+        font-family: 'Vazirmatn', sans-serif; /* فرض بر اینکه فونت را داری */
+        background-color: var(--bg); 
         color: var(--p); 
-        padding: 15px; 
-        max-width: 450px; 
+        padding: 20px; 
+        max-width: 400px; 
         margin: auto; 
-        line-height: 1.6;
-        display: block !important; /* تضمین چیدمان بلوکی */
+        display: block !important; 
     }
 
-    /* لوگو: همیشه بالا و دایره‌ای */
+    /* لوگو: بزرگ و دایره‌ای با حاشیه تیره */
     .logo { 
-        width: 130px; 
-        height: 130px; 
-        border-radius: 50%; 
-        margin: 0 auto 15px; 
+        width: 200px !important; 
+        height: 200px !important; 
+        border-radius: 50% !important; 
+        border: 2px solid var(--p) !important; 
+        margin: 0 auto 20px auto !important; 
         display: block !important; 
-        border: 3px solid var(--p); 
         object-fit: cover; 
     }
 
-    h1 { text-align: center; font-size: 1.5em; margin-bottom: 20px; display: block; width: 100%; }
+    /* مخفی کردن متن برند کنار لوگو */
+    h1 { display: none !important; }
 
-    /* باکس‌ها: عرض کامل و چیدمان عمودی */
+    /* باکس‌ها: بدون تغییر در چیدمان */
     .box { 
-        background: #ffffff; 
-        padding: 15px; 
-        border-radius: 12px; 
-        box-shadow: 0 4px 12px rgba(93, 64, 55, 0.1); 
+        background: #FFFFFF; 
+        padding: 20px; 
+        border-radius: 15px; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
         margin-bottom: 15px; 
-        border: 1px solid #efebe9; 
-        display: block !important; /* حتماً زیر هم قرار می‌گیرند */
+        display: block !important; 
         width: 100% !important;
         box-sizing: border-box;
     }
 
-    label { display: block; margin: 10px 0 5px; font-weight: bold; font-size: 0.9em; }
+    label { display: block; margin-bottom: 5px; font-weight: 700; font-size: 14px; }
     
     select, input, textarea { 
         width: 100%; 
-        padding: 10px; 
+        padding: 12px; 
         border-radius: 8px; 
-        border: 1px solid #d7ccc8; 
+        border: 1px solid #D7CCC8; 
         box-sizing: border-box; 
-        font-size: 1em; 
-        background: #fff; 
+        font-family: inherit;
+        background: #FAFAFA;
+        margin-bottom: 15px;
         display: block; 
     }
 
     button { 
-        background: #4ca159; 
-        color: #fff; 
+        background-color: var(--p); 
+        color: #FFFFFF; 
         border: none; 
         padding: 12px; 
         width: 100%; 
         border-radius: 8px; 
-        font-weight: bold; 
+        font-weight: 700; 
         cursor: pointer; 
-        margin-top: 15px; 
-        font-size: 1em; 
         display: block;
     }
 
-    #orderList { font-size: 0.9em; background: #efebe9; padding: 10px; border-radius: 8px; margin-top: 10px; display: block; }
-    
-    .order-item { display: block; margin-bottom: 8px; padding-bottom: 5px; border-bottom: 1px solid #d7ccc8; }
-    .del-btn { background: #e53935; padding: 5px 10px; font-size: 12px; border-radius: 4px; color: white; border: none; cursor: pointer; display: inline-block; }
+    #orderList { background: #efebe9; padding: 10px; border-radius: 8px; margin-top: 10px; }
+    .order-item { display: flex; justify-content: space-between; border-bottom: 1px solid #d7ccc8; padding: 5px 0; }
 </style>
 
 </head>
