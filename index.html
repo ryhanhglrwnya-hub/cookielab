@@ -4,53 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Lab</title>
- <style>
+<style>
   @import url('https://v1.fontapi.ir/css/Vazirmatn');
 
   body {
-    background-color: #FFFBF6;
+    background-color: #FDF9F3; /* رنگ گرم بیسکوییتی */
     font-family: 'Vazirmatn', sans-serif;
-    color: #5D4037;
+    color: #4E342E; /* رنگ متن قهوه‌ای ملایم */
     margin: 0;
-    padding: 20px;
+    padding: 10px;
     direction: rtl;
-    /* اطمینان از اینکه همه چیز در ستون قرار می‌گیرد */
-    display: block; 
   }
 
   .box {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 30px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-    max-width: 450px;
-    margin: 0 auto; /* وسط‌چین کردن باکس در صفحه */
-    border: 1px solid #efe5de;
-    /* جلوگیری از تغییر حالت به افقی */
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(121, 85, 72, 0.06);
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #EFEBE9;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    gap: 5px;
   }
 
   /* حذف اجباری متن Cookie Lab */
-  /* این بخش هر متنی که احتمالا در تگ های h1 یا div زیر لوگو باشد را مخفی می‌کند */
-  .logo + *, 
-  .logo + h1, 
-  .logo + div, 
-  .logo + span {
+  .logo + *, .logo + h1, .logo + div, .logo + span {
     display: none !important;
   }
 
   .logo {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #A67B5B;
-    margin: 0 auto 20px auto; /* مرکز کردن لوگو */
+    border: 3px solid #D7CCC8;
+    margin: 0 auto 15px auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
   }
 
   .logo img {
@@ -59,60 +52,63 @@
     object-fit: cover;
   }
 
-  /* اصلاح چیدمان فرم به صورت عمودی */
-  input, select, textarea, .order-item, button {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
   label {
-    display: block;
-    font-weight: 600;
-    font-size: 14px;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 3px;
+    color: #6D4C41;
   }
 
   input, select, textarea {
-    margin-bottom: 15px;
-    padding: 12px;
-    border: 1.5px solid #EFE5DE;
-    border-radius: 12px;
-    background: #FFFBF6;
+    padding: 10px;
+    border: 1.5px solid #D7CCC8;
+    border-radius: 10px;
+    background: #FAFAFA;
     font-family: 'Vazirmatn', sans-serif;
+    margin-bottom: 5px;
+  }
+
+  input:focus {
+    border-color: #A1887F;
+    background: #FFF;
   }
 
   button {
-    background-color: #A67B5B;
+    background-color: #795548; /* قهوه‌ای شیک و کلاسیک */
     color: white;
     border: none;
-    padding: 15px;
-    border-radius: 15px;
-    font-weight: bold;
-    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-top: 10px;
     cursor: pointer;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    background-color: #5D4037;
   }
 
   .order-item {
-    background: #FFFBF6;
-    padding: 10px;
-    border-radius: 12px;
-    margin-bottom: 8px;
-    border: 1px solid #efe5de;
-    display: flex; /* برای اینکه دکمه حذف کنار آیتم باشد */
-    flex-direction: row-reverse; /* تراز کردن آیتم و دکمه */
+    background: #FDF9F3; /* همرنگِ پس‌زمینه اصلی */
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-top: 5px;
+    border: 1px solid #EFEBE9;
+    display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
   }
 
   .del-btn {
-    background: #ffcdd2;
-    color: #c62828;
+    background: #FFEBEE;
+    color: #D32F2F;
     border: none;
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
   }
 </style>
 
