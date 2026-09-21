@@ -9,22 +9,22 @@
     :root { --p: #4E342E; --bg: #FDF9F3; }
     
     body { 
-        font-family: 'Vazirmatn', sans-serif; /* فرض بر اینکه فونت را داری */
+        font-family: 'Vazirmatn', sans-serif; 
         background-color: var(--bg); 
         color: var(--p); 
-        padding: 20px; 
-        max-width: 400px; 
+        padding: 25px; /* کمی فضای بیشتر اطراف */
+        max-width: 450px; /* کمی عریض‌تر */
         margin: auto; 
         display: block !important; 
     }
 
-    /* لوگو: بزرگ و دایره‌ای با حاشیه تیره */
+    /* لوگو: بدون تغییر */
     .logo { 
         width: 200px !important; 
         height: 200px !important; 
         border-radius: 50% !important; 
         border: 2px solid var(--p) !important; 
-        margin: 0 auto 20px auto !important; 
+        margin: 0 auto 25px auto !important; 
         display: block !important; 
         object-fit: cover; 
     }
@@ -32,46 +32,51 @@
     /* مخفی کردن متن برند کنار لوگو */
     h1 { display: none !important; }
 
-    /* باکس‌ها: بدون تغییر در چیدمان */
+    /* باکس‌ها: فضای داخلی بیشتر (۲۵ پیکسل به جای ۲۰) */
     .box { 
         background: #FFFFFF; 
-        padding: 20px; 
-        border-radius: 15px; 
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
-        margin-bottom: 15px; 
+        padding: 25px; 
+        border-radius: 18px; /* گردتر */
+        box-shadow: 0 6px 20px rgba(0,0,0,0.06); 
+        margin-bottom: 20px; 
         display: block !important; 
         width: 100% !important;
         box-sizing: border-box;
     }
 
-    label { display: block; margin-bottom: 5px; font-weight: 700; font-size: 14px; }
+    /* فونت بزرگ‌تر برای برچسب‌ها */
+    label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 16px; }
     
+    /* ورودی‌ها: بزرگ‌تر و راحت‌تر */
     select, input, textarea { 
         width: 100%; 
-        padding: 12px; 
-        border-radius: 8px; 
-        border: 1px solid #D7CCC8; 
+        padding: 15px; /* ورودی‌های درشت‌تر */
+        border-radius: 10px; 
+        border: 1.5px solid #D7CCC8; 
         box-sizing: border-box; 
         font-family: inherit;
         background: #FAFAFA;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+        font-size: 16px; /* فونت بزرگ‌تر */
         display: block; 
     }
 
+    /* دکمه: بزرگ و خوش‌دست */
     button { 
         background-color: var(--p); 
         color: #FFFFFF; 
         border: none; 
-        padding: 12px; 
+        padding: 15px; 
         width: 100%; 
-        border-radius: 8px; 
+        border-radius: 10px; 
         font-weight: 700; 
+        font-size: 16px; /* فونت بزرگ‌تر */
         cursor: pointer; 
         display: block;
     }
 
-    #orderList { background: #efebe9; padding: 10px; border-radius: 8px; margin-top: 10px; }
-    .order-item { display: flex; justify-content: space-between; border-bottom: 1px solid #d7ccc8; padding: 5px 0; }
+    #orderList { background: #efebe9; padding: 15px; border-radius: 10px; margin-top: 10px; font-size: 15px; }
+    .order-item { display: flex; justify-content: space-between; border-bottom: 1px solid #d7ccc8; padding: 10px 0; }
 </style>
 
 </head>
